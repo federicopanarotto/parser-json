@@ -39,4 +39,4 @@ const yamlResult = yamlAts.parse();
 
 console.log(JSON.stringify(result, null, 2));
 console.log(formatXml(xmlResult));
-console.log(yamlAts.valueToYaml(yamlResult, 2))a
+console.log(yamlAts.valueToYaml(yamlResult, 2));
