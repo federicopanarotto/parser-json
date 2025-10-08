@@ -1,10 +1,11 @@
+import { Formatter } from "./formatter.ts";
 import { lex } from "./lexer.ts";
 import { Parser } from "./parser.ts";
 import { formatXml, XmlParser } from "./xmlParser.ts";
 import { YamlParser } from "./yamlPerser.ts";
 
 const obj = {
-  name: "John",
+  userName: "John",
   age: 30,
   pc: {
     motherboard: "NZXT z690",
@@ -40,3 +41,12 @@ const yamlResult = yamlAts.parse();
 console.log(JSON.stringify(result, null, 2));
 console.log(formatXml(xmlResult));
 console.log(yamlAts.valueToYaml(yamlResult, 2));
+
+const formatter = new Formatter({
+  indent: 2,
+  pretty: true,
+  casing: 'snake',
+  includeNull: false
+});
+
+console.log(formatter.format(result));
